@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rasmus Östlund</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&family=Young+Serif&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+
+      .biggest {
+        font-size: 32px;
+      }
+
+      .flexible-padding {
+        padding: 16px;
+      }
+
+      @media (min-width: 800px) {
+        .biggest {
+          font-size: 42px;
+        }
+
+        .flexible-padding {
+          padding: 32px;
+        }
+      }
+
+      a,
+      a:visited {
+        color: #daa520;
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: #ffd700;
+        text-decoration: underline;
+      }
+
+      p,
+      li,
+      a {
+        line-height: 1.4em;
+        font-size: 14px;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      body {
+        font-family: "Nunito Sans", sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .space-between {
+        justify-content: space-between;
+      }
+
+      .green-dark {
+        color: #1d4d37;
+      }
+
+      .green-bright {
+        color: #478d5b;
+      }
+
+      .gold-normal {
+        color: #daa520;
+      }
+
+      .gold-dark {
+        color: #B8860B;
+      }
+
+      .gold-bright {
+        color: #ffd700;
+      }
+
+
+      .gold-white {
+        color: #fdebdc;
+      }
+
+      .young-serif {
+        font-family: "Young Serif", serif;
+      }
+
+      body {
+        /* background: url("assets/bg.jpg") center; */
+        background-color: #111111;
+        /* background-size: cover; */
+      }
+
+      .flex {
+        display: flex;
+      }
+
+      .horizontal-center {
+        justify-content: center;
+        display: flex;
+      }
+
+      .vertical-center {
+        align-items: center;
+        display: flex;
+      }
+
+      .rounded {
+        border-radius: 15px;
+      }
+
+      .flex-wrap {
+        flex-wrap: wrap;
+      }
+
+      .bg-white {
+        background-color: white;
+      }
+
+      .bg-teal {
+        background-color: #004455;
+      }
+
+      .flex-1 {
+        flex: 1;
+      }
+
+      .width-100p {
+        width: 100%;
+      }
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+
+      .column {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .row {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .column.horizontal-center {
+        align-items: center;
+      }
+
+      .text-shadow {
+        text-shadow: 1px 1px 2px #1d4d37;
+      }
+
+      .drop-shadow {
+        box-shadow: 0px 3px 20px black;
+      }
+
+      img.drop-shadow {
+        box-shadow: none;
+        filter: drop-shadow(0px 3px 20px black);
+      }
+
+      img.drop-shadow-s {
+        box-shadow: none;
+        filter: drop-shadow(0px 5px 5px #00000077);
+      }
+    </style>
+
+    <script>
+      var style = document.createElement("style");
+      style.type = "text/css";
+      style.innerHTML = `
+
+        ${[8, 12, 16, 24, 32, 48, 64]
+          .flatMap((n) =>
+            [
+              "margin",
+              "margin-top",
+              "margin-bottom",
+              "margin-left",
+              "margin-right",
+              "padding",
+              "padding-bottom",
+              "padding-top",
+              "font-size",
+            ].map((s) => `.${s}-${n} { ${s}: ${n}px; }`)
+          )
+          .join("\n")}
+
+        ${[8, 10, 12, 16, 18, 32, 64]
+          .flatMap((n) =>
+            ["font-size", "gap"].map((s) => `.${s}-${n} { ${s}: ${n}px; }`)
+          )
+          .join("\n")}
+
+        ${["red"]
+          .flatMap((n) => ["color"].map((s) => `.${s}-${n} { ${s}: ${n}; }`))
+          .join("\n")}
+
+        ${[64, 100, 128, 200, 300, 400, 800]
+          .flatMap((n) =>
+            ["width", "max-width", "min-width", "max-height"].map(
+              (s) => `.${s}-${n} { ${s}: ${n}px; }`
+            )
+          )
+          .join("\n")}
+
+        ${[600, 700]
+          .flatMap((n) =>
+            ["font-weight"].map((s) => `.${s}-${n} { ${s}: ${n}; }`)
+          )
+          .join("\n")}
+`;
+      document.getElementsByTagName("head")[0].appendChild(style);
+    </script>
+  </head>
+
+  <body>
+    <div class="flex horizontal-center column">
+      <div class="flex horizontal-center vertical-center gap-8 padding-top-32">
+        <div>
+          <h1 class="gold-normal biggest young-serif">Rasmus Östlund</h1>
+        </div>
+      </div>
+      <div
+        class="horizontal-center gap-16 margin-top-16 margin-bottom-16 flex-wrap"
+      >
+        <div><a href="#games">Games</a></div>
+        <div><a href="#resume">Resume</a></div>
+        <div><a href="#about">About</a></div>
+        <div><a href="#contact">Contact</a></div>
+      </div>
+
+      <div
+        class="gold-white max-width-800 rounded bg-teal flexible-padding margin-12 flex-1 padding-bottom-32 drop-shadow"
+      >
+        <h1 id="games" class="font-size-32 font-weight-700 margin-bottom-8">
+          Games
+        </h1>
+        <p>Some of the games I have worked on.</p>
+
+        <div class="margin-top-24 margin-bottom-64">
+          <h3 class="horizontal-center font-size-24 font-weigth-700 margin-bottom-8">
+            Ooglians
+          </h3>
+          <div class="horizontal-center column margin-bottom-16">
+            <div class="row gap-16 margin-16 space-between">
+              <div class "">
+                <img
+                  alt="Ooglians Image"
+                  class="drop-shadow-s rounded"
+                  src="assets/oogli_1.jpg"
+                />
+              </div>
+              <div class "">
+                <img
+                  alt="Ooglians Image 2"
+                  class="drop-shadow-s rounded"
+                  src="assets/oogli_2.jpg"
+                />
+            </div>
+          </div>
+          <p class="margin-bottom-8">
+            Rogue-lite Base Building Tower Defense
+          </p>
+        </div>
+
+        <div class="margin-top-24 margin-bottom-64">
+          <h3 class="horizontal-center font-size-24 font-weigth-700 margin-bottom-8">
+            Block'Em!
+          </h3>
+          <div class="horizontal-center column margin-bottom-16">
+            <div class="row gap-16 margin-16 space-between">
+              <div class "">
+                <img
+                  alt="Block'em Image 1"
+                  class="drop-shadow-s rounded"
+                  src="assets/blockem_1.jpg"
+                />
+              </div>
+              <div class "">
+                <img
+                  alt="Block'em Image 2"
+                  class="drop-shadow-s rounded"
+                  src="assets/blockem_2.jpg"
+                />
+            </div>
+          </div>
+          <p class="margin-bottom-8">
+            Multiplayer PvP Platforming Party Game
+          </p>
+        </div>
+
+        <div class="margin-top-24 margin-bottom-64">
+          <h3 class="horizontal-center font-size-24 font-weigth-700 margin-bottom-8">
+            Rust Racers
+          </h3>
+          <div class="horizontal-center column margin-bottom-16">
+            <div class="row gap-16 margin-16 space-between">
+              <div class "">
+                <img
+                  alt="Rust Racers Image 1"
+                  class="drop-shadow-s rounded"
+                  src="assets/rustracers_1.jpg"
+                />
+              </div>
+              <div class "">
+                <img
+                  alt="Rust Racers Image 2"
+                  class="drop-shadow-s rounded"
+                  src="assets/rustracers_2.jpg"
+                />
+            </div>
+          </div>
+          <p class="margin-bottom-8">
+            Online Multiplayer Vehicular Combat Game
+          </p>
+        </div>
+          
+          <h2
+            id="contact"
+            class="font-weight-700 font-size-24 margin-bottom-8 margin-top-64"
+          >
+            Contact
+          </h2>
+          <p></p>
+          <div class="row gap-8 space-between">
+            <div class="column">
+              <div class="row">
+                <div class="width-100">E-mail</div>
+                <div>contact@rasmusostlund.com</div>
+              </div>
+              <div class="row">
+                <div class="width-100">LinkedIn</div>
+                <div>
+                  <a href="https://www.linkedin.com/in/rasmus-ostlund/">
+                    My profile on LinkedIn
+                  </a>
+                </div>
+              </div>
+            </div>
+<!--        <div class="row gap-8">
+              <a href="https://www.instagram.com/zquat/"
+                ><img
+                  width="64"
+                  height="64"
+                  alt="Instagram Logo"
+                  src="assets/instagram_icon.svg"
+              /></a>
+              <a href="https://www.facebook.com/rasmus.amadeus.ostlund/">
+                <img
+                  width="64"
+                  height="64"
+                  alt="LinkedIn Logo"
+                  src="assets/linkedin_icon.svg"
+                />
+              </a>
+            </div>                                 -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

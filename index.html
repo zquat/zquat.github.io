@@ -1,712 +1,589 @@
 <!DOCTYPE html>
-<meta charset="utf-8" />
-<html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Rasmus Östlund</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&family=Young+Serif&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      * {
-        margin: 0px;
-        padding: 0px;
-        box-sizing: border-box;
-      }
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rasmus Östlund — Game Producer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Young+Serif&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-      .biggest {
-        font-size: 32px;
-      }
+    body {
+      background-color: #111111;
+      color: #fdebdc;
+      font-family: "Nunito Sans", sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 1.4em;
+    }
 
-      .flexible-padding {
-        padding: 16px;
-      }
+    a, a:visited { color: #daa520; text-decoration: none; }
+    a:hover { color: #ffd700; text-decoration: underline; }
 
-      @media (min-width: 800px) {
-        .biggest {
-          font-size: 42px;
-        }
+    .inner {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 1.25rem 5rem;
+    }
 
-        .flexible-padding {
-          padding: 32px;
-        }
-      }
+    /* ── Nav ── */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 0;
+      border-bottom: 0.5px solid #004455;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .nav-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: #fdebdc;
+    }
+    .nav-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .nav-links a { font-size: 13px; color: #daa520; }
 
-      a,
-      a:visited {
-        color: #daa520;
-        text-decoration: none;
-      }
+    /* ── Hero ── */
+    .hero {
+      padding: 3rem 0 2.5rem;
+      border-bottom: 0.5px solid #004455;
+      margin-bottom: 3rem;
+    }
+    .hero-label {
+      display: inline-block;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      color: #111111;
+      background: #daa520;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 {
+      font-family: "Young Serif", serif;
+      font-size: clamp(28px, 6vw, 42px);
+      font-weight: 400;
+      line-height: 1.15;
+      color: #fdebdc;
+      margin-bottom: 1.25rem;
+    }
+    .hero-sub {
+      font-size: clamp(14px, 2.5vw, 15px);
+      color: #b0a090;
+      line-height: 1.7;
+      max-width: 560px;
+      margin-bottom: 2rem;
+    }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-primary {
+      font-size: 14px;
+      font-weight: 700;
+      font-family: "Nunito Sans", sans-serif;
+      padding: 10px 24px;
+      border-radius: 15px;
+      background: #daa520;
+      color: #111111;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: #ffd700; color: #111111; text-decoration: none; }
+    .btn-secondary {
+      font-size: 14px;
+      font-family: "Nunito Sans", sans-serif;
+      font-weight: 600;
+      padding: 10px 24px;
+      border-radius: 15px;
+      border: 1px solid #004455;
+      background: transparent;
+      color: #daa520;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-secondary:hover { border-color: #daa520; color: #ffd700; text-decoration: none; }
 
-      a:hover {
-        color: #ffd700;
-        text-decoration: underline;
-      }
+    /* ── Stats ── */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 3rem;
+    }
+    .stat {
+      background: #004455;
+      border-radius: 15px;
+      padding: 1rem 1.25rem;
+      box-shadow: 0 3px 20px black;
+    }
+    .stat-num { font-size: 28px; font-weight: 700; color: #daa520; }
+    .stat-label { font-size: 12px; color: #b0a090; margin-top: 2px; }
 
-      p,
-      li,
-      a {
-        line-height: 1.4em;
-        font-size: 14px;
-      }
+    /* ── Section label ── */
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #daa520;
+      margin-bottom: 1.25rem;
+    }
+    .section { margin-bottom: 3.5rem; }
 
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6,
-      body {
-        font-family: "Nunito Sans", sans-serif;
-        font-size: 14px;
-        font-weight: 600;
-      }
+    /* ── Game cards ── */
+    .games-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr));
+      gap: 16px;
+    }
+    .game-card {
+      background: #004455;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 3px 20px black;
+    }
+    .game-thumb {
+      height: 140px;
+      overflow: hidden;
+      background: #003344;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .game-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .game-info { padding: 12px 14px; }
+    .game-title { font-size: 14px; font-weight: 700; color: #fdebdc; margin-bottom: 2px; }
+    .game-year { font-size: 12px; color: #b0a090; margin-bottom: 5px; }
+    .game-genre { font-size: 12px; color: #b0a090; margin-bottom: 10px; line-height: 1.4; }
+    .game-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 8px; }
+    .tag {
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 20px;
+      background: #003344;
+      color: #b0a090;
+    }
+    .tag.prod { background: #B8860B; color: #fdebdc; }
+    .tag.loc  { background: #1d4d37; color: #9fe1cb; }
 
-      .space-between {
-        justify-content: space-between;
-      }
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 2px;
+    }
+    .steam-link { font-size: 11px; color: #daa520; }
+    .steam-link:hover { color: #ffd700; text-decoration: underline; }
 
-      .green-dark {
-        color: #1d4d37;
-      }
+    /* ── Expandable ── */
+    .expand-btn {
+      font-size: 11px;
+      font-family: "Nunito Sans", sans-serif;
+      font-weight: 700;
+      color: #daa520;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .expand-btn:hover { color: #ffd700; }
+    .expand-btn .arrow {
+      display: inline-block;
+      transition: transform 0.25s ease;
+    }
+    .expand-btn.open .arrow { transform: rotate(180deg); }
 
-      .green-bright {
-        color: #478d5b;
-      }
+    .expandable {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+    .expandable.open { max-height: 700px; }
+    .expand-inner {
+      border-top: 0.5px solid #003344;
+      margin: 0 14px;
+      padding: 12px 0 14px;
+    }
+    .expand-inner p {
+      font-size: 12px;
+      color: #b0a090;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+    .expand-shots {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+    }
+    .expand-shots img {
+      width: 100%;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 8px;
+      display: block;
+    }
 
-      .gold-normal {
-        color: #daa520;
-      }
+    /* ── Localization credits ── */
+    .loc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 175px), 1fr));
+      gap: 12px;
+    }
+    .loc-card {
+      background: #004455;
+      border-radius: 15px;
+      padding: 12px 14px;
+      box-shadow: 0 3px 20px black;
+    }
+    .loc-title { font-size: 14px; font-weight: 700; color: #fdebdc; margin-bottom: 2px; }
+    .loc-year  { font-size: 12px; color: #b0a090; margin-bottom: 8px; }
+    .loc-badge {
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 20px;
+      background: #1d4d37;
+      color: #9fe1cb;
+      display: inline-block;
+    }
 
-      .gold-dark {
-        color: #B8860B;
-      }
+    /* ── Skills ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 160px), 1fr));
+      gap: 12px;
+    }
+    .skill-card {
+      background: #004455;
+      border-radius: 15px;
+      padding: 1rem;
+      box-shadow: 0 3px 20px black;
+    }
+    .skill-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: #003344;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 8px;
+    }
+    .skill-name { font-size: 13px; font-weight: 700; color: #fdebdc; margin-bottom: 2px; }
+    .skill-desc { font-size: 12px; color: #b0a090; line-height: 1.4; }
 
-      .gold-bright {
-        color: #ffd700;
-      }
+    /* ── Footer ── */
+    footer {
+      border-top: 0.5px solid #004455;
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .footer-note { font-size: 13px; color: #b0a090; }
+    .footer-links { display: flex; gap: 1.25rem; }
+    .footer-links a { font-size: 13px; color: #daa520; }
 
-
-      .gold-white {
-        color: #fdebdc;
-      }
-
-      .young-serif {
-        font-family: "Young Serif", serif;
-      }
-
-      body {
-        /* background: url("assets/bg.png") center; */
-        background-color: #111111;
-        /* background-size: cover; */
-      }
-
-      .flex {
-        display: flex;
-      }
-
-      .horizontal-center {
-        justify-content: center;
-        display: flex;
-      }
-
-      .vertical-center {
-        align-items: center;
-        display: flex;
-      }
-
-      .rounded {
-        border-radius: 15px;
-      }
-
-      .flex-wrap {
-        flex-wrap: wrap;
-      }
-
-      .bg-white {
-        background-color: white;
-      }
-
-      .bg-teal {
-        background-color: #004455;
-      }
-
-      .flex-1 {
+    /* ── Mobile ── */
+    @media (max-width: 480px) {
+      .hero-actions .btn-primary,
+      .hero-actions .btn-secondary {
         flex: 1;
+        text-align: center;
       }
+    }
+  </style>
+</head>
+<body>
+<div class="inner">
 
-      .width-100p {
-        width: 100%;
-      }
+  <nav>
+    <span class="nav-name">Rasmus Östlund</span>
+    <div class="nav-links">
+      <a href="#work">work</a>
+      <a href="#skills">skills</a>
+      <a href="#contact">contact</a>
+    </div>
+  </nav>
 
-      img {
-        max-width: 100%;
-        max-height: 100%;
-      }
+  <section class="hero">
+    <div class="hero-label">game producer</div>
+    <h1>Shipping games,<br>from first pixel<br>to final patch.</h1>
+    <p class="hero-sub">Producer and studio lead with 3 years in the games industry. I've led full product lifecycles — shipping commercial titles, running cross-functional teams, and managing localization across global releases. Based in Barcelona.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="#work">See my work</a>
+      <a class="btn-secondary" href="#contact">Get in touch</a>
+    </div>
+  </section>
 
-      .column {
-        display: flex;
-        flex-direction: column;
-      }
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-num">5</div>
+      <div class="stat-label">games produced</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">3 yrs</div>
+      <div class="stat-label">in the industry</div>
+    </div>
+  </div>
 
-      .row {
-        display: flex;
-        flex-direction: row;
-      }
+  <section class="section" id="work">
+    <div class="section-label">produced</div>
+    <div class="games-grid">
 
-      .column.horizontal-center {
-        align-items: center;
-      }
-
-      .text-shadow {
-        text-shadow: 1px 1px 2px #1d4d37;
-      }
-
-      .drop-shadow {
-        box-shadow: 0px 3px 20px black;
-      }
-
-      img.drop-shadow {
-        box-shadow: none;
-        filter: drop-shadow(0px 3px 20px black);
-      }
-
-      img.drop-shadow-s {
-        box-shadow: none;
-        filter: drop-shadow(0px 5px 5px #00000077);
-      }
-    </style>
-
-    <script>
-      var style = document.createElement("style");
-      style.type = "text/css";
-      style.innerHTML = `
-
-        ${[8, 12, 16, 24, 32, 48, 64]
-          .flatMap((n) =>
-            [
-              "margin",
-              "margin-top",
-              "margin-bottom",
-              "margin-left",
-              "margin-right",
-              "padding",
-              "padding-bottom",
-              "padding-top",
-              "font-size",
-            ].map((s) => `.${s}-${n} { ${s}: ${n}px; }`)
-          )
-          .join("\n")}
-
-        ${[8, 10, 12, 16, 18, 32, 64]
-          .flatMap((n) =>
-            ["font-size", "gap"].map((s) => `.${s}-${n} { ${s}: ${n}px; }`)
-          )
-          .join("\n")}
-
-        ${["red"]
-          .flatMap((n) => ["color"].map((s) => `.${s}-${n} { ${s}: ${n}; }`))
-          .join("\n")}
-
-        ${[64, 100, 128, 200, 300, 400, 800]
-          .flatMap((n) =>
-            ["width", "max-width", "min-width", "max-height"].map(
-              (s) => `.${s}-${n} { ${s}: ${n}px; }`
-            )
-          )
-          .join("\n")}
-
-        ${[600, 700]
-          .flatMap((n) =>
-            ["font-weight"].map((s) => `.${s}-${n} { ${s}: ${n}; }`)
-          )
-          .join("\n")}
-`;
-      document.getElementsByTagName("head")[0].appendChild(style);
-    </script>
-  </head>
-
-  <body>
-    <div class="flex horizontal-center column">
-      <div class="flex horizontal-center vertical-center gap-8 padding-top-32">
-        <div>
-          <h1 class="gold-normal biggest young-serif">Rasmus Östlund</h1>
+      <!-- Ooglians -->
+      <div class="game-card">
+        <div class="game-thumb">
+          <img src="assets/Ooglians_main.gif" alt="Ooglians gameplay">
+        </div>
+        <div class="game-info">
+          <div class="game-title">Ooglians</div>
+          <div class="game-year">2022 · PC (Steam)</div>
+          <div class="game-genre">Rogue-lite base building tower defense</div>
+          <div class="game-tags">
+            <span class="tag prod">Producer</span>
+            <span class="tag prod">Art</span>
+            <span class="tag prod">Designer</span>
+            <span class="tag loc">Localization</span>
+          </div>
+          <div class="card-footer">
+            <a class="steam-link" href="https://store.steampowered.com/app/2162070/Ooglians/" target="_blank">Steam →</a>
+            <button class="expand-btn" onclick="toggleExpand(this)">More <span class="arrow">▾</span></button>
+          </div>
+        </div>
+        <div class="expandable">
+          <div class="expand-inner">
+            <p>Led the full production of Ooglians from concept to launch — scoping, sprint planning, team coordination, art, game design, and localization across multiple languages. One of the studio's strongest commercial releases.</p>
+            <div class="expand-shots">
+              <img src="assets/Ooglians1.png" alt="Ooglians screenshot 1">
+              <img src="assets/Ooglians2.png" alt="Ooglians screenshot 2">
+              <img src="assets/Ooglians3.png" alt="Ooglians screenshot 3">
+              <img src="assets/Ooglians4.png" alt="Ooglians screenshot 4">
+            </div>
+          </div>
         </div>
       </div>
-      <div
-        class="horizontal-center gap-16 margin-top-16 margin-bottom-16 flex-wrap"
-      >
-        <div><a href="#games">Games</a></div>
-		<div><a href="#personalprojects">Personal Projects</a></div>
-        <div><a href="#resume">Resume</a></div>
-        <div><a href="#about">About</a></div>
-        <div><a href="#contact">Contact</a></div>
+
+      <!-- Block'Em! -->
+      <div class="game-card">
+        <div class="game-thumb">
+          <img src="assets/Blockem_main.gif" alt="Block'Em! gameplay">
+        </div>
+        <div class="game-info">
+          <div class="game-title">Block'Em!</div>
+          <div class="game-year">2022 · PC (Steam)</div>
+          <div class="game-genre">Multiplayer PvP platforming party game</div>
+          <div class="game-tags">
+            <span class="tag prod">Producer</span>
+            <span class="tag prod">Art</span>
+            <span class="tag prod">Level Design</span>
+            <span class="tag loc">Localization</span>
+          </div>
+          <div class="card-footer">
+            <a class="steam-link" href="https://store.steampowered.com/app/1529220/BlockEm/" target="_blank">Steam →</a>
+            <button class="expand-btn" onclick="toggleExpand(this)">More <span class="arrow">▾</span></button>
+          </div>
+        </div>
+        <div class="expandable">
+          <div class="expand-inner">
+            <p>Produced, designed levels for, and created art assets on Block'Em! — a fast-paced multiplayer party platformer. Handled the full release pipeline including multi-platform compliance, localization, and Steam launch.</p>
+            <div class="expand-shots">
+              <img src="assets/Blockem1.png" alt="Block'Em! screenshot 1">
+              <img src="assets/Blockem2.png" alt="Block'Em! screenshot 2">
+              <img src="assets/Blockem3.png" alt="Block'Em! screenshot 3">
+              <img src="assets/Blockem4.png" alt="Block'Em! screenshot 4">
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div
-        class="gold-white max-width-800 rounded bg-teal flexible-padding margin-12 flex-1 padding-bottom-32 drop-shadow"
-      >
-        <h1 id="games" class="font-size-32 font-weight-700 margin-bottom-8">
-          Games
-        </h1>
-        <p>Some of the games I have worked on, in order of involvement.</p>
-
-        <div class="margin-top-24 margin-bottom-64">
-          <h3 class="horizontal-center font-size-24 font-weigth-700 margin-bottom-8">
-            Ooglians (2022)
-          </h3>
-		  <p class="horizontal-center margin-bottom-4">
-          <b>Rogue-lite Base Building Tower Defense</b>
-		  </p>
-		  <p class="horizontal-center margin-bottom-4">
-		  Roles: Producer, Art, Game Designer, Localization, Release Manager
-          </p>
-          <div class="horizontal-center column margin-bottom-16">
-            <div class="row gap-16 margin-16 space-between">
-              <div class "">
-                <img
-                  alt="Ooglians Image"
-                  class="drop-shadow-s rounded"
-                  src="assets/oogli_1.png"
-                />
-              </div>
-              <div class "">
-                <img
-                  alt="Ooglians Image 2"
-                  class="drop-shadow-s rounded"
-                  src="assets/oogli_2.png"
-                />
-            </div>
+      <!-- Bullet Casters -->
+      <div class="game-card">
+        <div class="game-thumb">
+          <img src="assets/bulletcasters.jpg" alt="Bullet Casters screenshot">
+        </div>
+        <div class="game-info">
+          <div class="game-title">Bullet Casters</div>
+          <div class="game-year">2023 · PC (Steam)</div>
+          <div class="game-genre">Asymmetric PvP bullet hell</div>
+          <div class="game-tags">
+            <span class="tag prod">Producer</span>
+            <span class="tag loc">Localization</span>
           </div>
-		  <p class="margin-bottom-8">
-		    <a href="https://store.steampowered.com/app/2162070/Ooglians/">Ooglians on Steam</a>
-		  </p>
-		  <hr width="70%">
-        </div>
-
-        <div class="margin-top-24 margin-bottom-64">
-          <h3 class="horizontal-center font-size-24 font-weigth-700 margin-bottom-8">
-            Block'Em! (2022)
-          </h3>
-		  <p class="horizontal-center margin-bottom-4">
-          <b>Multiplayer PvP Platforming Party Game</b>
-		  </p>
-		  <p class="horizontal-center margin-bottom-4">
-		  Roles: Producer, Art, Game Designer, Level Designer, Localization, Release Manager
-          </p>
-          <div class="horizontal-center column margin-bottom-16">
-            <div class="row gap-16 margin-16 space-between">
-              <div class "">
-                <img
-                  alt="Block'em Image 1"
-                  class="drop-shadow-s rounded"
-                  src="assets/blockem_1.png"
-                />
-              </div>
-              <div class "">
-                <img
-                  alt="Block'em Image 2"
-                  class="drop-shadow-s rounded"
-                  src="assets/blockem_2.png"
-                />
-            </div>
-          </div>
-          <p class="margin-bottom-8">
-            <a href="https://store.steampowered.com/app/1529220/BlockEm/">Block'Em! on Steam</a>
-          </p>
-		  <hr width="70%">
-        </div>
-
-		  <div class="margin-top-24 margin-bottom-64">
-          <h3 class="horizontal-center font-size-24 font-weigth-700 margin-bottom-8">
-            Vessels of Decay (Unreleased)
-          </h3>
-		  <p class="horizontal-center margin-bottom-4">
-          <b>Retro-inspired Action-adventure set in post-apocalyptic Scandinavia</b>
-		  </p>
-		  <p class="horizontal-center margin-bottom-4">
-		  Roles: Producer
-          </p>
-          <div class="horizontal-center column margin-bottom-16">
-            <div class="row gap-16 margin-16 space-between">
-              <div class "">
-                <img
-                  alt="VoD Image 1"
-                  class="drop-shadow-s rounded"
-                  src="assets/vod_1.png"
-                />
-              </div>
-              <div class "">
-                <img
-                  alt="VoD Image 2"
-                  class="drop-shadow-s rounded"
-                  src="assets/vod_2.png"
-                />
-            </div>
-          </div>
-          <p class="margin-bottom-8">
-            <a href="https://store.steampowered.com/app/1425180/Vessels_of_Decay/">Vessels of Decay on Steam</a>
-          </p>
-		  <hr width="70%">
-        </div>
-
-		<div class="margin-top-24 margin-bottom-64">
-          <h3 class="horizontal-center font-size-24 font-weigth-700 margin-bottom-8">
-            Rust Racers (Unreleased)
-          </h3>
-		  <p class="horizontal-center margin-bottom-8">
-          <b>Online Multiplayer Vehicular Arena Combat</b>
-		  </p>
-		  <p class="horizontal-center margin-bottom-8">
-		  Roles: Producer
-          </p>
-          <div class="horizontal-center column margin-bottom-16">
-            <div class="row gap-16 margin-16 space-between">
-              <div class "">
-                <img
-                  alt="Rust Racers Image 1"
-                  class="drop-shadow-s rounded"
-                  src="assets/rustracers_1.png"
-                />
-              </div>
-              <div class "">
-                <img
-                  alt="Rust Racers Image 2"
-                  class="drop-shadow-s rounded"
-                  src="assets/rustracers_2.png"
-                />
-            </div>
-          </div>
-          <p class="margin-bottom-8">
-            <a href="https://store.steampowered.com/app/1044060/Rust_Racers/">Rust Racers on Steam</a>
-          </p>
-		  <hr width="70%">
-        </div>
-
-        <div class="margin-top-24 margin-bottom-64">
-          <h3 class="horizontal-center font-size-24 font-weigth-700 margin-bottom-8">
-            Chenso Club (2022)
-          </h3>
-		  <p class="horizontal-center margin-bottom-4">
-          <b>Retro Sidescrolling Platform Brawler</b>
-		  </p>
-		  <p class="horizontal-center margin-bottom-4">
-		  Roles: Localization Manager
-          </p>
-          <div class="horizontal-center column margin-bottom-16">
-            <div class="row gap-16 margin-16 space-between">
-              <div class "">
-                <img
-                  alt="Chenso Club Image 1"
-                  class="drop-shadow-s rounded"
-                  src="assets/chensoclub_1.png"
-                />
-              </div>
-              <div class "">
-                <img
-                  alt="Chenso Club Image 2"
-                  class="drop-shadow-s rounded"
-                  src="assets/chensoclub_2.png"
-                />
-            </div>
-          </div>
-          <p class="margin-bottom-8">
-            <a href="https://store.steampowered.com/app/1454730/Chenso_Club/">Chenso Club on Steam</a>
-          </p>
-		  <hr width="70%">
-        </div>
-		
-		<div class="margin-top-24 margin-bottom-64">
-          <h3 class="horizontal-center font-size-24 font-weigth-700 margin-bottom-8">
-            Hoplegs (2021)
-          </h3>
-		  <p class="horizontal-center margin-bottom-4">
-          <b>Rage-inducing Platformer</b>
-		  </p>
-		  <p class="horizontal-center margin-bottom-4">
-		  Roles: Producer, Localization, Release Manager
-          </p>
-          <div class="horizontal-center column margin-bottom-16">
-            <div class="row gap-16 margin-16 space-between">
-              <div class "">
-                <img
-                  alt="Hoplegs Image 1"
-                  class="drop-shadow-s rounded"
-                  src="assets/hoplegs_1.png"
-                />
-              </div>
-              <div class "">
-                <img
-                  alt="Hoplegs Image 2"
-                  class="drop-shadow-s rounded"
-                  src="assets/hoplegs_2.png"
-                />
-            </div>
-          </div>
-          <p class="margin-bottom-8">
-            <a href="https://store.steampowered.com/app/1395830/Hoplegs/">Hoplegs on Steam</a>
-          </p>
-		  <hr width="70%">
-        </div>
-
-		 <div class="margin-top-24 margin-bottom-64">
-          <h3 class="horizontal-center font-size-24 font-weigth-700 margin-bottom-8">
-            Bullet Casters (2023)
-          </h3>
-		  <p class="horizontal-center margin-bottom-4">
-          <b>Bullet hell with assymetric PvP - be the bullet hell</b>
-		  </p>
-		  <p class="horizontal-center margin-bottom-4">
-		  Roles: Producer, Localization Manager
-          </p>
-          <div class="horizontal-center column margin-bottom-16">
-            <div class="row gap-16 margin-16 space-between">
-              <div class "">
-                <img
-                  alt="Bullet Casters Image 1"
-                  class="drop-shadow-s rounded"
-                  src="assets/bulletcasters_1.png"
-                />
-              </div>
-              <div class "">
-                <img
-                  alt="Bullet Casters Image 2"
-                  class="drop-shadow-s rounded"
-                  src="assets/bulletcasters_2.png"
-                />
-            </div>
-          </div>
-          <p class="margin-bottom-8">
-            <a href="https://store.steampowered.com/app/1838490/Bullet_Casters/">Bullet Casters on Steam</a>
-          </p>
-		  <hr width="70%">
-        </div>
-		
-		 <div class="margin-top-24 margin-bottom-64">
-          <h3 class="horizontal-center font-size-24 font-weigth-700 margin-bottom-8">
-            1993 Space Machine (2016)
-          </h3>
-		  <p class="horizontal-center margin-bottom-4">
-          <b>Classic Shoot-em-up</b>
-		  </p>
-		  <p class="horizontal-center margin-bottom-4">
-		  Roles: Localization, Release Manager
-          </p>
-          <div class="horizontal-center column margin-bottom-16">
-            <div class="row gap-16 margin-16 space-between">
-              <div class "">
-                <img
-                  alt="1993 Image 1"
-                  class="drop-shadow-s rounded"
-                  src="assets/1993_1.png"
-                />
-              </div>
-              <div class "">
-                <img
-                  alt="1993 Image 2"
-                  class="drop-shadow-s rounded"
-                  src="assets/1993_2.png"
-                />
-            </div>
-          </div>
-          <p class="margin-bottom-8">
-            <a href="https://store.steampowered.com/app/373480/1993_Space_Machine/">1993 on Steam</a>
-          </p>
-		  <hr width="70%">
-        </div>
-		
-        <h1
-            id="personalprojects"
-            class="font-weight-700 font-size-32 margin-bottom-8 margin-top-64"
-        >
-            Personal Projects
-        </h1>
-		<div class="margin-top-24 margin-bottom-64">
-          <h3 class="horizontal-center font-size-24 font-weigth-700 margin-bottom-8">
-            Furious Business (Unreleased)
-          </h3>
-		  <p class="horizontal-center margin-bottom-4">
-          <b>Rage-fueled bullet hell</b>
-		  </p>
-		  <p class="horizontal-center margin-bottom-4">
-		  Roles: Producer, Art, Game Designer
-          </p>
-          <div class="horizontal-center column margin-bottom-16">
-            <!--<div class="row gap-16 margin-16 space-between">
-              <div class "">
-                <img
-                  alt="Furious Business Image 1"
-                  class="drop-shadow-s rounded"
-                  src="assets/furibusi_1.png"
-                />
-              </div>
-              <div class "">
-                <img
-                  alt="Furious Business Image 2"
-                  class="drop-shadow-s rounded"
-                  src="assets/furibusi_2.png"
-                />
-            </div>
-          </div>-->
-          <p class="margin-bottom-8">
-            <a href="https://hertzole.itch.io/furious-business">Furious Business on itch.io</a> (browser playable demo)
-          </p>
-		  <hr width="70%">
-        </div>
-		
-		 <div class="margin-top-24 margin-bottom-64">
-          <h3 class="horizontal-center font-size-24 font-weigth-700 margin-bottom-8">
-            Unga Bungers (Unreleased)
-          </h3>
-		  <p class="horizontal-center margin-bottom-4">
-          <b>Tower Defense Colony Sim (kindof)</b>
-		  </p>
-		  <p class="horizontal-center margin-bottom-4">
-		  Roles: Producer
-          </p>
-          <div class="horizontal-center column margin-bottom-16">
-            <!--<div class="row gap-16 margin-16 space-between">
-              <div class "">
-                <img
-                  alt="Unga Bungers Image 1"
-                  class="drop-shadow-s rounded"
-                  src="assets/ungabungers_1.png"
-                />
-              </div>
-              <div class "">
-                <img
-                  alt="Unga Bungers Image 2"
-                  class="drop-shadow-s rounded"
-                  src="assets/ungabunger2.png"
-                />
-            </div> 
-          </div> -->
-		  <hr width="70%">
-        </div>
-
-		 <div class="margin-top-24 margin-bottom-64">
-          <h3 class="horizontal-center font-size-24 font-weigth-700 margin-bottom-8">
-            Project CUBE (working title)
-          </h3>
-		  <p class="horizontal-center margin-bottom-4">
-          <b>Retro fixed camera co-op horror survival</b>
-		  </p>
-		  <p class="horizontal-center margin-bottom-4">
-		  Roles: Producer, Art, Game Designer, Level Designer
-          </p>
-          <div class="horizontal-center column margin-bottom-16">
-            <!--<div class="row gap-16 margin-16 space-between">
-              <div class "">
-                <img
-                  alt="CUBE Image 1"
-                  class="drop-shadow-s rounded"
-                  src="assets/cube_1.png"
-                />
-              </div>
-              <div class "">
-                <img
-                  alt="CUBE Image 2"
-                  class="drop-shadow-s rounded"
-                  src="assets/cube_2.png"
-                />
-            </div>
-          </div> -->
-		  <hr width="70%">
-        </div>
-
-<!-- game template		
-		 <div class="margin-top-24 margin-bottom-64">
-          <h3 class="horizontal-center font-size-24 font-weigth-700 margin-bottom-8">
-            gamename (Unreleased)
-          </h3>
-		  <p class="horizontal-center margin-bottom-4">
-          <b>oneliner game description</b>
-		  </p>
-		  <p class="horizontal-center margin-bottom-4">
-		  Roles: Producer, Art, Game Designer, Level Designer, Localization, Release Management
-          </p>
-          <div class="horizontal-center column margin-bottom-16">
-            <div class="row gap-16 margin-16 space-between">
-              <div class "">
-                <img
-                  alt="gamename Image 1"
-                  class="drop-shadow-s rounded"
-                  src="assets/gamename_1.png"
-                />
-              </div>
-              <div class "">
-                <img
-                  alt="gamename Image 2"
-                  class="drop-shadow-s rounded"
-                  src="assets/gamename_2.png"
-                />
-            </div>
-          </div>
-          <p class="margin-bottom-8">
-            steam link?
-          </p>
-		  <hr width="70%">
-        </div>
-game template -->
-
-<!-- RESUME -->
-          <h2
-            id="resume"
-            class="font-weight-700 font-size-24 margin-bottom-8 margin-top-64"
-          >
-            Resume
-          </h2>
-		  <p class="margin-bottom-8">
-			<a href="https://docs.google.com/document/d/1H91J019PV8V9PQjFma2yohCq2-bjZPb1i5PUZk4U_QY/">
-				Google Doc resume
-			</a>
-
-<!-- CONTACT -->          
-          <h2
-            id="contact"
-            class="font-weight-700 font-size-24 margin-bottom-8 margin-top-64"
-          >
-            Contact
-          </h2>
-          <p></p>
-          <div class="row gap-8 space-between">
-            <div class="column">
-              <div class="row">
-                <div class="width-100">E-mail</div>
-                <div>contact@rasmusostlund.com</div>
-              </div>
-              <div class="row">
-                <div class="width-100">LinkedIn</div>
-                <div>
-                  <a href="https://www.linkedin.com/in/rasmus-ostlund/">
-                    My profile on LinkedIn
-                  </a>
-                </div>
-              </div>
-            </div>
-<!--        <div class="row gap-8">
-              <a href="https://www.instagram.com/zquat/"
-                ><img
-                  width="64"
-                  height="64"
-                  alt="Instagram Logo"
-                  src="assets/instagram_icon.svg"
-              /></a>
-              <a href="https://www.facebook.com/rasmus.amadeus.ostlund/">
-                <img
-                  width="64"
-                  height="64"
-                  alt="LinkedIn Logo"
-                  src="assets/linkedin_icon.svg"
-                />
-              </a>
-            </div>                                 -->
+          <div class="card-footer">
+            <a class="steam-link" href="https://store.steampowered.com/app/1838490/Bullet_Casters/" target="_blank">Steam →</a>
           </div>
         </div>
+      </div>
+
+      <!-- Hoplegs -->
+      <div class="game-card">
+        <div class="game-thumb">
+          <img src="assets/hoplegs.jpg" alt="Hoplegs screenshot">
+        </div>
+        <div class="game-info">
+          <div class="game-title">Hoplegs</div>
+          <div class="game-year">2021 · PC (Steam)</div>
+          <div class="game-genre">Rage-inducing platformer</div>
+          <div class="game-tags">
+            <span class="tag prod">Producer</span>
+            <span class="tag loc">Localization</span>
+          </div>
+          <div class="card-footer">
+            <a class="steam-link" href="https://store.steampowered.com/app/1395830/Hoplegs/" target="_blank">Steam →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vessels of Decay -->
+      <div class="game-card">
+        <div class="game-thumb">
+          <img src="assets/vessels_of_decay.jpg" alt="Vessels of Decay screenshot">
+        </div>
+        <div class="game-info">
+          <div class="game-title">Vessels of Decay</div>
+          <div class="game-year">Unreleased · PC (Steam)</div>
+          <div class="game-genre">Retro action-adventure, post-apocalyptic Scandinavia</div>
+          <div class="game-tags">
+            <span class="tag prod">Producer</span>
+          </div>
+          <div class="card-footer">
+            <a class="steam-link" href="https://store.steampowered.com/app/1425180/Vessels_of_Decay/" target="_blank">Steam →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-label">localization credits</div>
+    <div class="loc-grid">
+      <div class="loc-card">
+        <div class="loc-title">Rust Racers</div>
+        <div class="loc-year">Unreleased · PC</div>
+        <span class="loc-badge">Localization manager</span>
+      </div>
+      <div class="loc-card">
+        <div class="loc-title">Chenso Club</div>
+        <div class="loc-year">2022 · PC</div>
+        <span class="loc-badge">Localization manager</span>
+      </div>
+      <div class="loc-card">
+        <div class="loc-title">1993 Space Machine</div>
+        <div class="loc-year">2016 · PC</div>
+        <span class="loc-badge">Localization</span>
       </div>
     </div>
-  </body>
+  </section>
+
+  <section class="section" id="skills">
+    <div class="section-label">skills & tools</div>
+    <div class="skills-grid">
+
+      <div class="skill-card">
+        <div class="skill-icon">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <rect x="1" y="1" width="14" height="14" rx="2" stroke="#daa520" stroke-width="1.5"/>
+            <path d="M4 8h8M8 4v8" stroke="#daa520" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="skill-name">Production & scoping</div>
+        <div class="skill-desc">Roadmaps, milestones, risk management</div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <circle cx="8" cy="8" r="6" stroke="#daa520" stroke-width="1.5"/>
+            <path d="M8 5v3l2 1.5" stroke="#daa520" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="skill-name">Release management</div>
+        <div class="skill-desc">Steam launches, patches, store pages</div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M2 13L8 3l6 10H2z" stroke="#daa520" stroke-width="1.5" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="skill-name">Localization</div>
+        <div class="skill-desc">Vendor management, multi-language QA</div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <rect x="2" y="4" width="12" height="8" rx="1.5" stroke="#daa520" stroke-width="1.5"/>
+            <path d="M5 4V3a1 1 0 011-1h4a1 1 0 011 1v1" stroke="#daa520" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="skill-name">Agile / Scrum</div>
+        <div class="skill-desc">Sprints, workflow design, team of 10+</div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M2 12l4-4 3 3 5-6" stroke="#daa520" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="skill-name">Art & visual</div>
+        <div class="skill-desc">Game art, UI, asset creation</div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <circle cx="5" cy="8" r="2.5" stroke="#daa520" stroke-width="1.5"/>
+            <circle cx="11" cy="5" r="2.5" stroke="#daa520" stroke-width="1.5"/>
+            <circle cx="11" cy="11" r="2.5" stroke="#daa520" stroke-width="1.5"/>
+            <path d="M7.2 7.2l1.8-1.4M7.2 8.8l1.8 1.4" stroke="#daa520" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="skill-name">Game design</div>
+        <div class="skill-desc">Systems, levels, player experience</div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer id="contact">
+    <span class="footer-note">Rasmus Östlund · Barcelona, Spain</span>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/rasmus-ostlund/" target="_blank">LinkedIn</a>
+      <a href="mailto:rasmus@rasmusostlund.com">Email</a>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  function toggleExpand(btn) {
+    const card = btn.closest('.game-card');
+    const expandable = card.querySelector('.expandable');
+    const isOpen = expandable.classList.contains('open');
+    expandable.classList.toggle('open', !isOpen);
+    btn.classList.toggle('open', !isOpen);
+    btn.firstChild.textContent = isOpen ? 'More ' : 'Less ';
+  }
+</script>
+</body>
 </html>

@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Young+Serif&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       background-color: #111111;
@@ -16,300 +16,223 @@
       font-family: "Nunito Sans", sans-serif;
       font-weight: 600;
       font-size: 14px;
-      line-height: 1.4em;
+      line-height: 1.4;
     }
 
     a, a:visited { color: #daa520; text-decoration: none; }
     a:hover { color: #ffd700; text-decoration: underline; }
 
-    .inner {
-      max-width: 780px;
-      margin: 0 auto;
-      padding: 0 1.25rem 5rem;
-    }
+    .inner { max-width: 860px; margin: 0 auto; padding: 0 1.25rem 5rem; }
 
-    /* ── Nav ── */
     nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.5rem 0;
-      border-bottom: 0.5px solid #004455;
-      margin-bottom: 3rem;
-      flex-wrap: wrap;
-      gap: 8px;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.5rem 0; border-bottom: 0.5px solid #004455;
+      margin-bottom: 3rem; flex-wrap: wrap; gap: 8px;
     }
-    .nav-name {
-      font-size: 15px;
-      font-weight: 700;
-      color: #fdebdc;
-    }
+    .nav-name { font-size: 15px; font-weight: 700; color: #fdebdc; }
     .nav-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
     .nav-links a { font-size: 13px; color: #daa520; }
 
-    /* ── Hero ── */
-    .hero {
-      padding: 3rem 0 2.5rem;
-      border-bottom: 0.5px solid #004455;
-      margin-bottom: 3rem;
-    }
+    .hero { padding: 3rem 0 2.5rem; border-bottom: 0.5px solid #004455; margin-bottom: 3rem; }
     .hero-label {
-      display: inline-block;
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      font-weight: 700;
-      color: #111111;
-      background: #daa520;
-      padding: 4px 12px;
-      border-radius: 20px;
-      margin-bottom: 1.25rem;
+      display: inline-block; font-size: 12px; letter-spacing: 0.08em;
+      font-weight: 700; color: #111111; background: #daa520;
+      padding: 4px 12px; border-radius: 20px; margin-bottom: 1.25rem;
     }
     .hero h1 {
-      font-family: "Young Serif", serif;
-      font-size: clamp(28px, 6vw, 42px);
-      font-weight: 400;
-      line-height: 1.15;
-      color: #fdebdc;
-      margin-bottom: 1.25rem;
+      font-family: "Young Serif", serif; font-weight: 400;
+      font-size: clamp(28px, 6vw, 42px); line-height: 1.15;
+      color: #fdebdc; margin-bottom: 1.25rem;
     }
-    .hero-sub {
-      font-size: clamp(14px, 2.5vw, 15px);
-      color: #b0a090;
-      line-height: 1.7;
-      max-width: 560px;
-      margin-bottom: 2rem;
-    }
+    .hero-sub { font-size: 15px; color: #b0a090; line-height: 1.7; max-width: 560px; margin-bottom: 2rem; }
     .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
     .btn-primary {
-      font-size: 14px;
-      font-weight: 700;
-      font-family: "Nunito Sans", sans-serif;
-      padding: 10px 24px;
-      border-radius: 15px;
-      background: #daa520;
-      color: #111111;
-      border: none;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
+      font-size: 14px; font-weight: 700; padding: 10px 24px; border-radius: 15px;
+      background: #daa520; color: #111111; border: none; cursor: pointer; display: inline-block;
     }
     .btn-primary:hover { background: #ffd700; color: #111111; text-decoration: none; }
     .btn-secondary {
-      font-size: 14px;
-      font-family: "Nunito Sans", sans-serif;
-      font-weight: 600;
-      padding: 10px 24px;
-      border-radius: 15px;
-      border: 1px solid #004455;
-      background: transparent;
-      color: #daa520;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
+      font-size: 14px; padding: 10px 24px; border-radius: 15px;
+      border: 1px solid #004455; background: transparent; color: #daa520;
+      cursor: pointer; display: inline-block;
     }
     .btn-secondary:hover { border-color: #daa520; color: #ffd700; text-decoration: none; }
 
-    /* ── Stats ── */
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-      margin-bottom: 3rem;
-    }
-    .stat {
-      background: #004455;
-      border-radius: 15px;
-      padding: 1rem 1.25rem;
-      box-shadow: 0 3px 20px black;
-    }
+    .stats { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px; margin-bottom: 3rem; }
+    .stat { background: #004455; border-radius: 15px; padding: 1rem 1.25rem; box-shadow: 0 3px 20px black; }
     .stat-num { font-size: 28px; font-weight: 700; color: #daa520; }
     .stat-label { font-size: 12px; color: #b0a090; margin-top: 2px; }
 
-    /* ── Section label ── */
     .section-label {
-      font-size: 11px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      font-weight: 700;
-      color: #daa520;
-      margin-bottom: 1.25rem;
+      font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+      font-weight: 700; color: #daa520; margin-bottom: 1.25rem;
     }
     .section { margin-bottom: 3.5rem; }
 
-    /* ── Game cards ── */
-    .games-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr));
-      gap: 16px;
-    }
+    .games-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    @media (max-width: 600px) { .games-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 360px) { .games-grid { grid-template-columns: 1fr; } }
+
+    /* Card */
     .game-card {
+      border-radius: 12px; overflow: hidden; background: #004455;
+      box-shadow: 0 3px 16px black; cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .game-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,0.8); }
+
+    .card-thumb {
+      position: relative; width: 100%; padding-top: 62%;
+      background: #002233; overflow: hidden;
+    }
+    .card-thumb img.bg-img {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; display: block; transition: transform 0.4s ease;
+    }
+    .game-card:hover .card-thumb img.bg-img { transform: scale(1.05); }
+
+    /* Logo centered on card by default */
+    .card-logo {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      padding: 12px; pointer-events: none;
+    }
+    .card-logo img {
+      max-width: 100%; max-height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.95)) drop-shadow(0 0 16px rgba(0,0,0,0.8));
+    }
+    /* Fallback text logo */
+    .logo-text {
+      font-family: "Young Serif", serif; font-size: clamp(12px, 2vw, 15px);
+      color: #fdebdc; text-align: center;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.95), 0 0 30px rgba(0,0,0,0.7);
+      line-height: 1.2;
+    }
+
+    .card-name {
+      padding: 8px 10px 10px; font-size: 12px; font-weight: 700;
+      color: #fdebdc; border-top: 0.5px solid #003344;
+    }
+    .card-name .year-plat { font-size: 10px; color: #b0a090; margin-top: 2px; }
+
+    /* Overlay */
+    .overlay {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,0.82); z-index: 100; cursor: pointer;
+    }
+    .overlay.active { display: block; }
+
+    /* Modal — always fixed-center in viewport */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%) scale(0.95);
+      z-index: 200;
+      width: min(520px, 92vw);
+      max-height: 88vh;
+      overflow-y: auto;
       background: #004455;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 3px 20px black;
+      border-radius: 16px;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.95);
+      opacity: 0;
+      transition: opacity 0.25s ease, transform 0.25s ease;
     }
-    .game-thumb {
-      height: 140px;
-      overflow: hidden;
-      background: #003344;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .modal.active {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
     }
-    .game-thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
+
+    .modal-thumb {
+      position: relative; width: 100%; padding-top: 54%;
+      background: #002233; overflow: hidden;
     }
-    .game-info { padding: 12px 14px; }
-    .game-title { font-size: 14px; font-weight: 700; color: #fdebdc; margin-bottom: 2px; }
-    .game-year { font-size: 12px; color: #b0a090; margin-bottom: 5px; }
-    .game-genre { font-size: 12px; color: #b0a090; margin-bottom: 10px; line-height: 1.4; }
-    .game-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 8px; }
-    .tag {
-      font-size: 11px;
-      padding: 2px 8px;
-      border-radius: 20px;
-      background: #003344;
-      color: #b0a090;
+    .modal-thumb img.bg-img {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; display: block;
     }
+    /* Logo slides to bottom in modal */
+    .modal-logo {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 36px 18px 14px;
+      background: linear-gradient(to top, rgba(0,0,0,0.82) 0%, transparent 100%);
+      display: flex; align-items: flex-end;
+    }
+    .modal-logo img.logo-img {
+      max-height: 52px; max-width: 68%;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 10px rgba(0,0,0,0.9));
+    }
+    .modal-logo .logo-text { font-size: clamp(18px, 4vw, 24px); }
+
+    .modal-body { padding: 16px 18px 22px; }
+    .modal-title {
+      font-family: "Young Serif", serif; font-size: 21px;
+      font-weight: 400; color: #fdebdc; margin-bottom: 4px;
+    }
+    .modal-meta { font-size: 12px; color: #b0a090; margin-bottom: 12px; }
+    .modal-desc { font-size: 13px; color: #b0a090; line-height: 1.65; margin-bottom: 14px; }
+    .modal-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 14px; }
+
+    .tag { font-size: 11px; padding: 3px 9px; border-radius: 20px; background: #003344; color: #b0a090; }
     .tag.prod { background: #B8860B; color: #fdebdc; }
     .tag.loc  { background: #1d4d37; color: #9fe1cb; }
+    .tag.qa   { background: #1a1a33; color: #9090cc; }
+    .tag.asst { background: #2a1a00; color: #c8a060; }
 
-    .card-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-top: 2px;
-    }
-    .steam-link { font-size: 11px; color: #daa520; }
-    .steam-link:hover { color: #ffd700; text-decoration: underline; }
+    .modal-link { font-size: 13px; color: #daa520; }
+    .modal-link:hover { color: #ffd700; text-decoration: underline; }
 
-    /* ── Expandable ── */
-    .expand-btn {
-      font-size: 11px;
-      font-family: "Nunito Sans", sans-serif;
-      font-weight: 700;
-      color: #daa520;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 0;
-      display: flex;
-      align-items: center;
-      gap: 4px;
+    .modal-close {
+      position: absolute; top: 10px; right: 12px;
+      background: rgba(0,0,0,0.55); border: none; color: #fdebdc;
+      width: 30px; height: 30px; border-radius: 50%; font-size: 16px;
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      z-index: 10; transition: background 0.15s;
     }
-    .expand-btn:hover { color: #ffd700; }
-    .expand-btn .arrow {
-      display: inline-block;
-      transition: transform 0.25s ease;
-    }
-    .expand-btn.open .arrow { transform: rotate(180deg); }
+    .modal-close:hover { background: rgba(0,0,0,0.85); }
 
-    .expandable {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease;
-    }
-    .expandable.open { max-height: 700px; }
-    .expand-inner {
-      border-top: 0.5px solid #003344;
-      margin: 0 14px;
-      padding: 12px 0 14px;
-    }
-    .expand-inner p {
-      font-size: 12px;
-      color: #b0a090;
-      line-height: 1.6;
-      margin-bottom: 12px;
-    }
-    .expand-shots {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6px;
-    }
-    .expand-shots img {
-      width: 100%;
-      height: 80px;
-      object-fit: cover;
-      border-radius: 8px;
-      display: block;
-    }
-
-    /* ── Localization credits ── */
-    .loc-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(min(100%, 175px), 1fr));
-      gap: 12px;
-    }
-    .loc-card {
-      background: #004455;
-      border-radius: 15px;
-      padding: 12px 14px;
-      box-shadow: 0 3px 20px black;
-    }
-    .loc-title { font-size: 14px; font-weight: 700; color: #fdebdc; margin-bottom: 2px; }
-    .loc-year  { font-size: 12px; color: #b0a090; margin-bottom: 8px; }
-    .loc-badge {
-      font-size: 11px;
-      padding: 2px 8px;
-      border-radius: 20px;
-      background: #1d4d37;
-      color: #9fe1cb;
-      display: inline-block;
-    }
-
-    /* ── Skills ── */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(min(100%, 160px), 1fr));
-      gap: 12px;
-    }
-    .skill-card {
-      background: #004455;
-      border-radius: 15px;
-      padding: 1rem;
-      box-shadow: 0 3px 20px black;
-    }
-    .skill-icon {
-      width: 28px;
-      height: 28px;
-      border-radius: 8px;
-      background: #003344;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 8px;
-    }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 160px), 1fr)); gap: 12px; }
+    .skill-card { background: #004455; border-radius: 15px; padding: 1rem; box-shadow: 0 3px 20px black; }
+    .skill-icon { width: 28px; height: 28px; border-radius: 8px; background: #003344; display: flex; align-items: center; justify-content: center; margin-bottom: 8px; }
     .skill-name { font-size: 13px; font-weight: 700; color: #fdebdc; margin-bottom: 2px; }
     .skill-desc { font-size: 12px; color: #b0a090; line-height: 1.4; }
 
-    /* ── Footer ── */
     footer {
-      border-top: 0.5px solid #004455;
-      padding-top: 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 10px;
+      border-top: 0.5px solid #004455; padding-top: 1.5rem;
+      display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap; gap: 10px;
     }
     .footer-note { font-size: 13px; color: #b0a090; }
     .footer-links { display: flex; gap: 1.25rem; }
     .footer-links a { font-size: 13px; color: #daa520; }
 
-    /* ── Mobile ── */
     @media (max-width: 480px) {
-      .hero-actions .btn-primary,
-      .hero-actions .btn-secondary {
-        flex: 1;
-        text-align: center;
-      }
+      .stats { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .hero-actions .btn-primary, .hero-actions .btn-secondary { flex: 1; text-align: center; }
     }
   </style>
 </head>
 <body>
+
+<div class="overlay" id="overlay" onclick="closeModal()"></div>
+
+<div class="modal" id="modal">
+  <button class="modal-close" onclick="closeModal()">✕</button>
+  <div class="modal-thumb" id="modal-thumb">
+    <img class="bg-img" id="modal-img" src="" alt="">
+    <div class="modal-logo" id="modal-logo"></div>
+  </div>
+  <div class="modal-body">
+    <div class="modal-title" id="modal-title"></div>
+    <div class="modal-meta" id="modal-meta"></div>
+    <div class="modal-desc" id="modal-desc"></div>
+    <div class="modal-tags" id="modal-tags"></div>
+    <a class="modal-link" id="modal-link" href="#" target="_blank"></a>
+  </div>
+</div>
+
 <div class="inner">
 
   <nav>
@@ -332,236 +255,200 @@
   </section>
 
   <div class="stats">
-    <div class="stat">
-      <div class="stat-num">5</div>
-      <div class="stat-label">games produced</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">3 yrs</div>
-      <div class="stat-label">in the industry</div>
-    </div>
+    <div class="stat"><div class="stat-num">15+</div><div class="stat-label">games worked on</div></div>
+    <div class="stat"><div class="stat-num">3 yrs</div><div class="stat-label">in the industry</div></div>
+    <div class="stat"><div class="stat-num">5+</div><div class="stat-label">platforms shipped</div></div>
   </div>
 
+  <!-- ═══════════ PRODUCED (6) ═══════════ -->
   <section class="section" id="work">
     <div class="section-label">produced</div>
     <div class="games-grid">
 
-      <!-- Ooglians -->
-      <div class="game-card">
-        <div class="game-thumb">
-          <img src="assets/Ooglians_main.gif" alt="Ooglians gameplay">
-        </div>
-        <div class="game-info">
-          <div class="game-title">Ooglians</div>
-          <div class="game-year">2022 · PC (Steam)</div>
-          <div class="game-genre">Rogue-lite base building tower defense</div>
-          <div class="game-tags">
-            <span class="tag prod">Producer</span>
-            <span class="tag prod">Art</span>
-            <span class="tag prod">Designer</span>
-            <span class="tag loc">Localization</span>
-          </div>
-          <div class="card-footer">
-            <a class="steam-link" href="https://store.steampowered.com/app/2162070/Ooglians/" target="_blank">Steam →</a>
-            <button class="expand-btn" onclick="toggleExpand(this)">More <span class="arrow">▾</span></button>
-          </div>
-        </div>
-        <div class="expandable">
-          <div class="expand-inner">
-            <p>Led the full production of Ooglians from concept to launch — scoping, sprint planning, team coordination, art, game design, and localization across multiple languages. One of the studio's strongest commercial releases.</p>
-            <div class="expand-shots">
-              <img src="assets/Ooglians1.png" alt="Ooglians screenshot 1">
-              <img src="assets/Ooglians2.png" alt="Ooglians screenshot 2">
-              <img src="assets/Ooglians3.png" alt="Ooglians screenshot 3">
-              <img src="assets/Ooglians4.png" alt="Ooglians screenshot 4">
-            </div>
-          </div>
-        </div>
+      <div class="game-card" onclick="openModal(this)"
+        data-img="assets/Ooglians_main.gif" data-logo="assets/Ooglians_Logo.png"
+        data-title="Ooglians" data-year="2024" data-plat="PC (Windows)"
+        data-desc="A silly cooperative defense game where you build a base and save your machines from the fearsome Ooglians."
+        data-tags="prod:Producer,prod:Art,prod:Design,loc:Localization,qa:QA"
+        data-link="https://store.steampowered.com/app/2162070/Ooglians/" data-link-label="View on Steam →">
+        <div class="card-thumb"><img class="bg-img" src="assets/Ooglians_main.gif" alt="Ooglians">
+          <div class="card-logo"><img src="assets/Ooglians_Logo.png" alt="Ooglians"></div></div>
+        <div class="card-name">Ooglians<div class="year-plat">2024 · PC</div></div>
       </div>
 
-      <!-- Block'Em! -->
-      <div class="game-card">
-        <div class="game-thumb">
-          <img src="assets/Blockem_main.gif" alt="Block'Em! gameplay">
-        </div>
-        <div class="game-info">
-          <div class="game-title">Block'Em!</div>
-          <div class="game-year">2022 · PC (Steam)</div>
-          <div class="game-genre">Multiplayer PvP platforming party game</div>
-          <div class="game-tags">
-            <span class="tag prod">Producer</span>
-            <span class="tag prod">Art</span>
-            <span class="tag prod">Level Design</span>
-            <span class="tag loc">Localization</span>
-          </div>
-          <div class="card-footer">
-            <a class="steam-link" href="https://store.steampowered.com/app/1529220/BlockEm/" target="_blank">Steam →</a>
-            <button class="expand-btn" onclick="toggleExpand(this)">More <span class="arrow">▾</span></button>
-          </div>
-        </div>
-        <div class="expandable">
-          <div class="expand-inner">
-            <p>Produced, designed levels for, and created art assets on Block'Em! — a fast-paced multiplayer party platformer. Handled the full release pipeline including multi-platform compliance, localization, and Steam launch.</p>
-            <div class="expand-shots">
-              <img src="assets/Blockem1.png" alt="Block'Em! screenshot 1">
-              <img src="assets/Blockem2.png" alt="Block'Em! screenshot 2">
-              <img src="assets/Blockem3.png" alt="Block'Em! screenshot 3">
-              <img src="assets/Blockem4.png" alt="Block'Em! screenshot 4">
-            </div>
-          </div>
-        </div>
+      <div class="game-card" onclick="openModal(this)"
+        data-img="assets/Blockem_main.gif" data-logo="assets/Blockem_Logo.png"
+        data-title="Block'Em!" data-year="2022" data-plat="PC · Switch · Xbox · PS"
+        data-desc="An action-packed block-building party game for 2 to 4 players. The controls are simple but the road to victory is complex."
+        data-tags="prod:Producer,prod:Art,prod:Design,loc:Localization,qa:QA"
+        data-link="https://store.steampowered.com/app/1529220/BlockEm/" data-link-label="View on Steam →">
+        <div class="card-thumb"><img class="bg-img" src="assets/Blockem_main.gif" alt="Block'Em!">
+          <div class="card-logo"><img src="assets/Blockem_Logo.png" alt="Block'Em!"></div></div>
+        <div class="card-name">Block'Em!<div class="year-plat">2022 · PC · Switch · Xbox · PS</div></div>
       </div>
 
-      <!-- Bullet Casters -->
-      <div class="game-card">
-        <div class="game-thumb">
-          <img src="assets/bulletcasters.jpg" alt="Bullet Casters screenshot">
-        </div>
-        <div class="game-info">
-          <div class="game-title">Bullet Casters</div>
-          <div class="game-year">2023 · PC (Steam)</div>
-          <div class="game-genre">Asymmetric PvP bullet hell</div>
-          <div class="game-tags">
-            <span class="tag prod">Producer</span>
-            <span class="tag loc">Localization</span>
-          </div>
-          <div class="card-footer">
-            <a class="steam-link" href="https://store.steampowered.com/app/1838490/Bullet_Casters/" target="_blank">Steam →</a>
-          </div>
-        </div>
+      <div class="game-card" onclick="openModal(this)"
+        data-img="assets/bullet_casters.jpg" data-logo="assets/BulletCasters_Logo.png"
+        data-title="Bullet Casters" data-year="2022" data-plat="PC (Windows)"
+        data-desc="A shoot 'em up mixed with local multiplayer arena combat where you become the bullet hell to destroy your opponent."
+        data-tags="prod:Producer,loc:Localization,qa:QA"
+        data-link="https://store.steampowered.com/app/1838490/Bullet_Casters/" data-link-label="View on Steam →">
+        <div class="card-thumb"><img class="bg-img" src="assets/bullet_casters.jpg" alt="Bullet Casters">
+          <div class="card-logo"><img src="assets/BulletCasters_Logo.png" alt="Bullet Casters"></div></div>
+        <div class="card-name">Bullet Casters<div class="year-plat">2022 · PC</div></div>
       </div>
 
-      <!-- Hoplegs -->
-      <div class="game-card">
-        <div class="game-thumb">
-          <img src="assets/hoplegs.jpg" alt="Hoplegs screenshot">
-        </div>
-        <div class="game-info">
-          <div class="game-title">Hoplegs</div>
-          <div class="game-year">2021 · PC (Steam)</div>
-          <div class="game-genre">Rage-inducing platformer</div>
-          <div class="game-tags">
-            <span class="tag prod">Producer</span>
-            <span class="tag loc">Localization</span>
-          </div>
-          <div class="card-footer">
-            <a class="steam-link" href="https://store.steampowered.com/app/1395830/Hoplegs/" target="_blank">Steam →</a>
-          </div>
-        </div>
+      <div class="game-card" onclick="openModal(this)"
+        data-img="assets/vessels_of_decay.jpg" data-logo="assets/VesselsOfDecay_Logo.png"
+        data-title="Vessels of Decay" data-year="Early Access" data-plat="PC (Windows)"
+        data-desc="A retro-inspired action-adventure set in a dark post-apocalyptic world rooted in Scandinavian folklore."
+        data-tags="prod:Producer,qa:QA"
+        data-link="https://store.steampowered.com/app/1425180/Vessels_of_Decay/" data-link-label="View on Steam →">
+        <div class="card-thumb"><img class="bg-img" src="assets/vessels_of_decay.jpg" alt="Vessels of Decay">
+          <div class="card-logo"><img src="assets/VesselsOfDecay_Logo.png" alt="Vessels of Decay"></div></div>
+        <div class="card-name">Vessels of Decay<div class="year-plat">Early Access · PC</div></div>
       </div>
 
-      <!-- Vessels of Decay -->
-      <div class="game-card">
-        <div class="game-thumb">
-          <img src="assets/vessels_of_decay.jpg" alt="Vessels of Decay screenshot">
-        </div>
-        <div class="game-info">
-          <div class="game-title">Vessels of Decay</div>
-          <div class="game-year">Unreleased · PC (Steam)</div>
-          <div class="game-genre">Retro action-adventure, post-apocalyptic Scandinavia</div>
-          <div class="game-tags">
-            <span class="tag prod">Producer</span>
-          </div>
-          <div class="card-footer">
-            <a class="steam-link" href="https://store.steampowered.com/app/1425180/Vessels_of_Decay/" target="_blank">Steam →</a>
-          </div>
-        </div>
+      <div class="game-card" onclick="openModal(this)"
+        data-img="assets/rustracers.jpg" data-logo="assets/RustRacers_Logo.png"
+        data-title="Rust Racers" data-year="2021" data-plat="PC (Windows)"
+        data-desc="An action-packed massively multiplayer vehicular combat game set in a dystopian corporate wasteland."
+        data-tags="prod:Producer,qa:QA"
+        data-link="https://store.steampowered.com/app/1044060/Rust_Racers/" data-link-label="View on Steam →">
+        <div class="card-thumb"><img class="bg-img" src="assets/rustracers.jpg" alt="Rust Racers">
+          <div class="card-logo"><img src="assets/RustRacers_Logo.png" alt="Rust Racers"></div></div>
+        <div class="card-name">Rust Racers<div class="year-plat">2021 · PC</div></div>
+      </div>
+
+      <div class="game-card" onclick="openModal(this)"
+        data-img="assets/FuriousBuisness_main.gif" data-logo="assets/FuriousBusiness_Logo.png"
+        data-title="Furious Business" data-year="2023" data-plat="PC (Windows)"
+        data-desc="A fast-paced economic bullet hell where cutthroat corporate maneuvers meet active arcade gameplay."
+        data-tags="prod:Producer,prod:Art,prod:Design"
+        data-link="https://hertzole.itch.io/furious-business" data-link-label="View on itch.io →">
+        <div class="card-thumb"><img class="bg-img" src="assets/FuriousBuisness_main.gif" alt="Furious Business">
+          <div class="card-logo"><img src="assets/FuriousBusiness_Logo.png" alt="Furious Business"></div></div>
+        <div class="card-name">Furious Business<div class="year-plat">2023 · PC</div></div>
       </div>
 
     </div>
   </section>
 
+  <!-- ═══════════ ALSO WORKED ON (9) ═══════════ -->
   <section class="section">
-    <div class="section-label">localization credits</div>
-    <div class="loc-grid">
-      <div class="loc-card">
-        <div class="loc-title">Rust Racers</div>
-        <div class="loc-year">Unreleased · PC</div>
-        <span class="loc-badge">Localization manager</span>
+    <div class="section-label">also worked on</div>
+    <div class="games-grid">
+
+      <div class="game-card" onclick="openModal(this)"
+        data-img="assets/skeletons.jpg" data-logo="assets/WhatDoYouCallAGroupOfSkeletons_Logo.png"
+        data-title="What do you call a group of skeletons" data-year="Oct 2026" data-plat="PC (Windows)"
+        data-desc="A short, humorous atmospheric adventure game filled with puzzles, skeletons, and lighthearted comedy."
+        data-tags="prod:Producer,qa:QA"
+        data-link="https://store.steampowered.com/app/3747520/What_do_You_Call_a_Group_of_Skeletons__Pilot/" data-link-label="View on Steam →">
+        <div class="card-thumb"><img class="bg-img" src="assets/skeletons.jpg" alt="What do you call a group of skeletons">
+          <div class="card-logo"><img src="assets/WhatDoYouCallAGroupOfSkeletons_Logo.png" alt="What do you call a group of skeletons"></div></div>
+        <div class="card-name">What do you call a group of skeletons<div class="year-plat">Oct 2026 · PC</div></div>
       </div>
-      <div class="loc-card">
-        <div class="loc-title">Chenso Club</div>
-        <div class="loc-year">2022 · PC</div>
-        <span class="loc-badge">Localization manager</span>
+
+      <div class="game-card" onclick="openModal(this)"
+        data-img="assets/1993.jpg" data-logo="assets/1993_Logo.png"
+        data-title="1993 Space Machine" data-year="2016" data-plat="PC · Switch · PS4"
+        data-desc="A classic shoot 'em up celebrating the golden era of Amiga side-scrollers, originally designed in 1993 and finished decades later."
+        data-tags="prod:Producer,loc:Localization,qa:QA"
+        data-link="https://store.steampowered.com/app/373480/1993_Space_Machine/" data-link-label="View on Steam →">
+        <div class="card-thumb"><img class="bg-img" src="assets/1993.jpg" alt="1993 Space Machine">
+          <div class="card-logo"><img src="assets/1993_Logo.png" alt="1993 Space Machine"></div></div>
+        <div class="card-name">1993 Space Machine<div class="year-plat">2016 · PC · Switch · PS4</div></div>
       </div>
-      <div class="loc-card">
-        <div class="loc-title">1993 Space Machine</div>
-        <div class="loc-year">2016 · PC</div>
-        <span class="loc-badge">Localization</span>
+
+      <div class="game-card" onclick="openModal(this)"
+        data-img="assets/hoplegs.jpg" data-logo="assets/HopLegs_Logo.png"
+        data-title="Hoplegs" data-year="2021" data-plat="PC (Windows)"
+        data-desc="A physics-based platformer where you control a quirky character navigating hazards using long, erratic legs."
+        data-tags="loc:Localization,qa:QA"
+        data-link="https://store.steampowered.com/app/1395830/Hoplegs/" data-link-label="View on Steam →">
+        <div class="card-thumb"><img class="bg-img" src="assets/hoplegs.jpg" alt="Hoplegs">
+          <div class="card-logo"><img src="assets/HopLegs_Logo.png" alt="Hoplegs"></div></div>
+        <div class="card-name">Hoplegs<div class="year-plat">2021 · PC</div></div>
       </div>
+
+      <div class="game-card" onclick="openModal(this)"
+        data-img="assets/chenso_club.jpg" data-logo="assets/ChensoClub_Logo.png"
+        data-title="Chenso Club" data-year="2022" data-plat="PC · Switch · PS4 · Xbox"
+        data-desc="An action-packed side-scrolling platform brawler featuring a colorful cast of alien-smashing heroines."
+        data-tags="loc:Localization,qa:QA"
+        data-link="https://store.steampowered.com/app/1454730/Chenso_Club/" data-link-label="View on Steam →">
+        <div class="card-thumb"><img class="bg-img" src="assets/chenso_club.jpg" alt="Chenso Club">
+          <div class="card-logo"><img src="assets/ChensoClub_Logo.png" alt="Chenso Club"></div></div>
+        <div class="card-name">Chenso Club<div class="year-plat">2022 · PC · Switch · PS4 · Xbox</div></div>
+      </div>
+
+      <div class="game-card" onclick="openModal(this)"
+        data-img="assets/kungfury.jpg" data-logo="assets/KungFury_Logo.png"
+        data-title="Kung Fury: Street Rage" data-year="2015" data-plat="PC · Switch · PS4"
+        data-desc="A fast-paced side-scrolling beat 'em up inspired by the legendary 80s homage film Kung Fury."
+        data-tags="asst:Asst. Producer,qa:QA"
+        data-link="https://store.steampowered.com/app/373180/Kung_Fury_Street_Rage__Ultimate_Edition/" data-link-label="View on Steam →">
+        <div class="card-thumb"><img class="bg-img" src="assets/kungfury.jpg" alt="Kung Fury: Street Rage">
+          <div class="card-logo"><img src="assets/KungFury_Logo.png" alt="Kung Fury: Street Rage"></div></div>
+        <div class="card-name">Kung Fury: Street Rage<div class="year-plat">2015 · PC · Switch · PS4</div></div>
+      </div>
+
+      <div class="game-card" onclick="openModal(this)"
+        data-img="assets/elricofmelnibone.jpg" data-logo="assets/Elric_Logo.png"
+        data-title="Elric of Melniboné" data-year="TBA" data-plat="PC · Consoles"
+        data-desc="A dark fantasy action-adventure title based on the acclaimed fantasy saga by Michael Moorcock."
+        data-tags="asst:Asst. Producer">
+        <div class="card-thumb"><img class="bg-img" src="assets/elricofmelnibone.jpg" alt="Elric of Melniboné">
+          <div class="card-logo"><img src="assets/Elric_Logo.png" alt="Elric of Melniboné"></div></div>
+        <div class="card-name">Elric of Melniboné<div class="year-plat">TBA · PC · Consoles</div></div>
+      </div>
+
+      <div class="game-card" onclick="openModal(this)"
+        data-img="assets/ironevil.jpg" data-logo="assets/IronEvil_Logo.png"
+        data-title="IRON EVIL" data-year="TBA" data-plat="PC (Windows)"
+        data-desc="A roguelite where you traverse a factory run by an evil corporation, equip yourself with the best parts and fight your way to the end."
+        data-tags="asst:Asst. Producer,qa:QA"
+        data-link="https://store.steampowered.com/app/1795100/IRON_EVIL/" data-link-label="View on Steam →">
+        <div class="card-thumb"><img class="bg-img" src="assets/ironevil.jpg" alt="IRON EVIL">
+          <div class="card-logo"><img src="assets/IronEvil_Logo.png" alt="IRON EVIL"></div></div>
+        <div class="card-name">IRON EVIL<div class="year-plat">TBA · PC</div></div>
+      </div>
+
+      <div class="game-card" onclick="openModal(this)"
+        data-img="assets/striden.jpg" data-logo="assets/Striden_Logo.png"
+        data-title="STRIDEN" data-year="Early Access" data-plat="PC (Windows)"
+        data-desc="A fast-paced team-based multiplayer FPS mixing looting and survival mechanics with intense arena combat."
+        data-tags="qa:QA"
+        data-link="https://store.steampowered.com/app/2052970/STRIDEN/" data-link-label="View on Steam →">
+        <div class="card-thumb"><img class="bg-img" src="assets/striden.jpg" alt="STRIDEN">
+          <div class="card-logo"><img src="assets/Striden_Logo.png" alt="STRIDEN"></div></div>
+        <div class="card-name">STRIDEN<div class="year-plat">Early Access · PC</div></div>
+      </div>
+
+      <div class="game-card" onclick="openModal(this)"
+        data-img="assets/agentsofconcordia.png" data-logo="assets/AgentsOfConcordia_Logo.png"
+        data-title="Agents of Concordia" data-year="TBA" data-plat="Tabletop / PC"
+        data-desc="A multi-dimensional sci-fi fantasy roleplaying game where agents protect the multiverse from destabilization."
+        data-tags="asst:Asst. Producer">
+        <div class="card-thumb"><img class="bg-img" src="assets/agentsofconcordia.png" alt="Agents of Concordia">
+          <div class="card-logo"><img src="assets/AgentsOfConcordia_Logo.png" alt="Agents of Concordia"></div></div>
+        <div class="card-name">Agents of Concordia<div class="year-plat">TBA · Tabletop / PC</div></div>
+      </div>
+
     </div>
   </section>
 
+  <!-- ═══════════ SKILLS ═══════════ -->
   <section class="section" id="skills">
     <div class="section-label">skills & tools</div>
     <div class="skills-grid">
-
-      <div class="skill-card">
-        <div class="skill-icon">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <rect x="1" y="1" width="14" height="14" rx="2" stroke="#daa520" stroke-width="1.5"/>
-            <path d="M4 8h8M8 4v8" stroke="#daa520" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div class="skill-name">Production & scoping</div>
-        <div class="skill-desc">Roadmaps, milestones, risk management</div>
-      </div>
-
-      <div class="skill-card">
-        <div class="skill-icon">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <circle cx="8" cy="8" r="6" stroke="#daa520" stroke-width="1.5"/>
-            <path d="M8 5v3l2 1.5" stroke="#daa520" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div class="skill-name">Release management</div>
-        <div class="skill-desc">Steam launches, patches, store pages</div>
-      </div>
-
-      <div class="skill-card">
-        <div class="skill-icon">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path d="M2 13L8 3l6 10H2z" stroke="#daa520" stroke-width="1.5" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="skill-name">Localization</div>
-        <div class="skill-desc">Vendor management, multi-language QA</div>
-      </div>
-
-      <div class="skill-card">
-        <div class="skill-icon">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <rect x="2" y="4" width="12" height="8" rx="1.5" stroke="#daa520" stroke-width="1.5"/>
-            <path d="M5 4V3a1 1 0 011-1h4a1 1 0 011 1v1" stroke="#daa520" stroke-width="1.5"/>
-          </svg>
-        </div>
-        <div class="skill-name">Agile / Scrum</div>
-        <div class="skill-desc">Sprints, workflow design, team of 10+</div>
-      </div>
-
-      <div class="skill-card">
-        <div class="skill-icon">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path d="M2 12l4-4 3 3 5-6" stroke="#daa520" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="skill-name">Art & visual</div>
-        <div class="skill-desc">Game art, UI, asset creation</div>
-      </div>
-
-      <div class="skill-card">
-        <div class="skill-icon">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <circle cx="5" cy="8" r="2.5" stroke="#daa520" stroke-width="1.5"/>
-            <circle cx="11" cy="5" r="2.5" stroke="#daa520" stroke-width="1.5"/>
-            <circle cx="11" cy="11" r="2.5" stroke="#daa520" stroke-width="1.5"/>
-            <path d="M7.2 7.2l1.8-1.4M7.2 8.8l1.8 1.4" stroke="#daa520" stroke-width="1.2" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div class="skill-name">Game design</div>
-        <div class="skill-desc">Systems, levels, player experience</div>
-      </div>
-
+      <div class="skill-card"><div class="skill-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="14" height="14" rx="2" stroke="#daa520" stroke-width="1.5"/><path d="M4 8h8M8 4v8" stroke="#daa520" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="skill-name">Production & scoping</div><div class="skill-desc">Roadmaps, milestones, risk management</div></div>
+      <div class="skill-card"><div class="skill-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="#daa520" stroke-width="1.5"/><path d="M8 5v3l2 1.5" stroke="#daa520" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="skill-name">Release management</div><div class="skill-desc">Steam launches, patches, store pages</div></div>
+      <div class="skill-card"><div class="skill-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 13L8 3l6 10H2z" stroke="#daa520" stroke-width="1.5" stroke-linejoin="round"/></svg></div><div class="skill-name">Localization</div><div class="skill-desc">Vendor management, multi-language QA</div></div>
+      <div class="skill-card"><div class="skill-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="4" width="12" height="8" rx="1.5" stroke="#daa520" stroke-width="1.5"/><path d="M5 4V3a1 1 0 011-1h4a1 1 0 011 1v1" stroke="#daa520" stroke-width="1.5"/></svg></div><div class="skill-name">Agile / Scrum</div><div class="skill-desc">Sprints, workflow design, team of 10+</div></div>
+      <div class="skill-card"><div class="skill-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 12l4-4 3 3 5-6" stroke="#daa520" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="skill-name">Art & visual</div><div class="skill-desc">Game art, UI, asset creation</div></div>
+      <div class="skill-card"><div class="skill-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="5" cy="8" r="2.5" stroke="#daa520" stroke-width="1.5"/><circle cx="11" cy="5" r="2.5" stroke="#daa520" stroke-width="1.5"/><circle cx="11" cy="11" r="2.5" stroke="#daa520" stroke-width="1.5"/><path d="M7.2 7.2l1.8-1.4M7.2 8.8l1.8 1.4" stroke="#daa520" stroke-width="1.2" stroke-linecap="round"/></svg></div><div class="skill-name">Game design</div><div class="skill-desc">Systems, levels, player experience</div></div>
     </div>
   </section>
 
@@ -576,14 +463,68 @@
 </div>
 
 <script>
-  function toggleExpand(btn) {
-    const card = btn.closest('.game-card');
-    const expandable = card.querySelector('.expandable');
-    const isOpen = expandable.classList.contains('open');
-    expandable.classList.toggle('open', !isOpen);
-    btn.classList.toggle('open', !isOpen);
-    btn.firstChild.textContent = isOpen ? 'More ' : 'Less ';
+  const tagClassMap = { prod:'prod', loc:'loc', qa:'qa', asst:'asst' };
+
+  function openModal(card) {
+    const d = card.dataset;
+    const modal = document.getElementById('modal');
+
+    // Background image
+    const img = document.getElementById('modal-img');
+    if (d.img) { img.src = d.img; img.style.display = 'block'; document.getElementById('modal-thumb').style.display = 'block'; }
+    else { document.getElementById('modal-thumb').style.display = 'none'; }
+
+    // Logo in modal (image if available, else text)
+    const logoEl = document.getElementById('modal-logo');
+    if (d.logo) {
+      logoEl.innerHTML = `<img class="logo-img" src="${d.logo}" alt="${d.title}">`;
+    } else {
+      logoEl.innerHTML = `<span class="logo-text">${d.title}</span>`;
+    }
+
+    // Content
+    document.getElementById('modal-title').textContent = d.title || '';
+    document.getElementById('modal-meta').textContent = [d.year, d.plat].filter(Boolean).join('  ·  ');
+    document.getElementById('modal-desc').textContent = d.desc || '';
+
+    // Tags
+    const tagsEl = document.getElementById('modal-tags');
+    tagsEl.innerHTML = '';
+    (d.tags || '').split(',').filter(Boolean).forEach(t => {
+      const [cls, label] = t.split(':');
+      const span = document.createElement('span');
+      span.className = 'tag ' + (tagClassMap[cls] || '');
+      span.textContent = label;
+      tagsEl.appendChild(span);
+    });
+
+    // Link
+    const linkEl = document.getElementById('modal-link');
+    const linkLabel = card.getAttribute('data-link-label');
+    if (d.link) {
+      linkEl.href = d.link;
+      linkEl.textContent = linkLabel || 'View →';
+      linkEl.style.display = 'inline';
+    } else {
+      linkEl.style.display = 'none';
+    }
+
+    // Show
+    modal.style.display = 'block';
+    document.getElementById('overlay').classList.add('active');
+    document.body.style.overflow = 'hidden';
+    requestAnimationFrame(() => requestAnimationFrame(() => modal.classList.add('active')));
   }
+
+  function closeModal() {
+    const modal = document.getElementById('modal');
+    modal.classList.remove('active');
+    document.getElementById('overlay').classList.remove('active');
+    document.body.style.overflow = '';
+    setTimeout(() => { modal.style.display = 'none'; }, 260);
+  }
+
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 </script>
 </body>
 </html>
